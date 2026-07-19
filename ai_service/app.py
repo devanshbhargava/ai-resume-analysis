@@ -1,3 +1,4 @@
+import os
 from flask import Flask ,request, jsonify
 from flask_cors import CORS
 from resume_analyzer import analyze_resume_text
@@ -161,6 +162,7 @@ def interview():
             "success": False,
 
             "message": str(e)
+
 
         }), 500
 
@@ -518,5 +520,10 @@ def interview_summary():
 
     
 
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5001)),
+        debug=False
+    )
