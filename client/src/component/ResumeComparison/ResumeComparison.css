@@ -1,0 +1,93 @@
+.comparison-container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.comparison-container input,
+.comparison-container textarea{
+
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+
+}
+
+.comparison-container button{
+
+    padding:12px 25px;
+
+    cursor:pointer;
+
+}
+
+.comparison-result{
+
+    margin-top:40px;
+
+}
+
+.winner-card{
+
+    text-align:center;
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin-bottom:30px;
+
+}
+
+.comparison-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.comparison-table th,
+.comparison-table td{
+
+    border:1px solid #ddd;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+.comparison-table th{
+
+    background:#0d6efd;
+
+    color:white;
+
+}
+
+.details{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+.resume-box{
+
+    flex:1;
+
+    border:1px solid #ddd;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}

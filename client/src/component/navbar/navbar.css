@@ -1,0 +1,83 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Navigation */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+/* React Router Link */
+
+.navbar-links a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #2563eb;
+}
+
+/* Active page (optional) */
+
+.navbar-links a.active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Button */
+
+.navbar-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.navbar-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Remove underline from button link */
+
+.navbar a {
+  text-decoration: none;
+}

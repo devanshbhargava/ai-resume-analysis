@@ -1,0 +1,26 @@
+.analyze-section {
+  width: 100%;
+  padding: 40px 10%;
+  text-align: center;
+  background: #0f172a;
+}
+
+.analyze-btn {
+  padding: 16px 40px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.analyze-btn:hover {
+  transform: translateY(-3px);
+}
+
+.analyze-btn:active {
+  transform: scale(0.97);
+}

@@ -1,0 +1,95 @@
+.resume-tailor {
+    margin-top: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resume-tailor button {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resume-tailor button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.resume-tailor button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.tailored-output {
+    margin-top: 20px;
+    padding: 18px;
+    background: #f8fafc;
+    border-left: 5px solid #2563eb;
+    border-radius: 10px;
+    line-height: 1.8;
+    color: #1f2937;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.tailored-output h1,
+.tailored-output h2,
+.tailored-output h3 {
+    color: #1d4ed8;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.tailored-output p {
+    margin-bottom: 12px;
+}
+
+.tailored-output ul,
+.tailored-output ol {
+    margin-left: 22px;
+    margin-bottom: 14px;
+}
+
+.tailored-output li {
+    margin-bottom: 8px;
+}
+
+.tailored-output code {
+    background: #e5e7eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+}
+
+.tailored-output pre {
+    background: #111827;
+    color: #f9fafb;
+    padding: 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .resume-tailor {
+        padding: 15px;
+    }
+
+    .resume-tailor button {
+        width: 100%;
+    }
+
+    .tailored-output {
+        padding: 15px;
+        font-size: 14px;
+    }
+}

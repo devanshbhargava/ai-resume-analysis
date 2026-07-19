@@ -1,0 +1,35 @@
+.question-card{
+
+    margin-top:30px;
+
+}
+
+.question-btn{
+
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+}
+
+.question-result{
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 0 12px rgba(0,0,0,.1);
+
+}

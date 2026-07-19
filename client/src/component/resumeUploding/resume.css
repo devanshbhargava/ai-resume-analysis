@@ -1,0 +1,21 @@
+.upload-section {
+  padding: 60px 20px;
+
+  text-align: center;
+}
+
+.upload-section h2 {
+  margin-bottom: 20px;
+
+  font-size: 32px;
+}
+
+.upload-section input {
+  margin-bottom: 20px;
+}
+
+.upload-section p {
+  font-size: 18px;
+
+  color: #374151;
+}
