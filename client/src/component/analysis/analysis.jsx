@@ -1,5 +1,6 @@
 import axios from "axios";
 import "./analysis.css";
+const API = import.meta.env.VITE_API_URL;
 const AnalyzeButton = ({
   resumeFile,
   jobDescription,
@@ -29,8 +30,9 @@ const AnalyzeButton = ({
         jobDescription
       );
 
+
       const response = await axios.post(
-        "http://localhost:5000/api/resume/upload",
+        `${API}/resume/upload`,
         formData
       );
 
