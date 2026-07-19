@@ -15,7 +15,7 @@ const evaluateAnswer = async (req, res) => {
         }
 
         const flaskResponse = await axios.post(
-            "http://127.0.0.1:5001/evaluate-answer",
+            `${process.env.AI_SERVICE_URL}/evaluate-answer`,
             {
                 question,
                 answer,
@@ -52,7 +52,7 @@ const generateInterviewSummary = async (req, res) => {
         }
 
         const flaskResponse = await axios.post(
-            "http://127.0.0.1:5001/interview-summary",
+            `${process.env.AI_SERVICE_URL}/interview-summary`,
             {
                 evaluations,
             }

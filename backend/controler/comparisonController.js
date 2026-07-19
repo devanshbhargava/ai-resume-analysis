@@ -52,7 +52,7 @@ const compareResumes = async (req, res) => {
 
         const flaskResponse = await axios.post(
 
-            "http://127.0.0.1:5001/compare-resumes",
+            `${process.env.AI_SERVICE_URL}/compare-resumes`,
 
             {
 
