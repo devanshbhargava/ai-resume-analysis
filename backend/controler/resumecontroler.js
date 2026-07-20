@@ -23,8 +23,13 @@ const uploadResume = async (req, res) => {
 
         // Send to Flask AI Service
         console.log("AI_SERVICE_URL =", process.env.AI_SERVICE_URL);
+
+        const url = `${process.env.AI_SERVICE_URL}/analyze`;
+
+        console.log("Calling URL:", url);
+
         const flaskResponse = await axios.post(
-            `${process.env.AI_SERVICE_URL}/analyze`,
+            url,
             {
                 resumeText,
                 jobDescription
