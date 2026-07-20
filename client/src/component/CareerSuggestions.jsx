@@ -8,24 +8,36 @@ const CareerSuggestions = ({ resumeText }) => {
   const [suggestions, setSuggestions] = useState("");
 
   const generateSuggestions = async () => {
+    if (!resumeText) {
+      alert("Resume text not found.");
+      return;
+    }
+
     try {
       setLoading(true);
 
       const response = await careerSuggestions(resumeText);
 
-      setSuggestions(response.career_suggestions);
+      console.log("Career Suggestions Response:", response);
+
+      setSuggestions(response?.career_suggestions || "No suggestions generated.");
     } catch (error) {
-      console.error(error);
+      console.error("Career Suggestions Error:", error);
+
+      setSuggestions(
+        "❌ Failed to generate career suggestions. Please try again."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div>
+    <div className="career-container">
       <button
         className="career-btn"
         onClick={generateSuggestions}
+        disabled={loading}
       >
         📈 Generate Career Suggestions
       </button>
@@ -33,7 +45,9 @@ const CareerSuggestions = ({ resumeText }) => {
       {loading && <LoadingSpinner />}
 
       {suggestions && (
-        <ReactMarkdown>{suggestions}</ReactMarkdown>
+        <div className="markdown-content">
+          <ReactMarkdown>{suggestions}</ReactMarkdown>
+        </div>
       )}
     </div>
   );
