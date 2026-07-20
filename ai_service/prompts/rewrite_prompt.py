@@ -1,145 +1,62 @@
 def build_rewrite_prompt(resume_text: str) -> str:
     """
     Build a prompt for rewriting a resume.
-
-    Parameters
-    ----------
-    resume_text : str
-        Extracted resume text.
-
-    Returns
-    -------
-    str
-        Complete prompt ready for Gemini.
     """
 
-    prompt = f"""
-You are a world-class Resume Writer and Senior Technical Recruiter with over 15 years of hiring experience at companies like Google, Microsoft, Amazon, Meta, Adobe, Atlassian, and Oracle.
+    return f"""
+You are a Senior Technical Recruiter and Professional Resume Writer.
 
-Your task is to rewrite the candidate's resume into a highly professional, ATS-friendly resume.
+Rewrite the resume into a modern ATS-friendly resume.
 
-IMPORTANT RULES:
+Rules:
+- Never invent experience, projects, companies, certifications or achievements.
+- Use only the information available in the resume.
+- Improve grammar and readability.
+- Use professional action verbs.
+- Return clean Markdown.
 
-1. Never add fake experience.
-2. Never add fake companies.
-3. Never add fake projects.
-4. Never add fake certifications.
-5. Never add fake achievements.
-6. Never change factual information.
-7. Improve grammar.
-8. Improve readability.
-9. Improve professionalism.
-10. Use ATS-friendly language.
-11. Keep all technical skills that already exist.
-12. Improve project descriptions.
-13. Improve experience descriptions.
-14. Use strong action verbs.
-15. Make the resume concise and impactful.
-
------------------------------------------------------
-
-Return the rewritten resume in the following structure.
+Generate the resume in the following format:
 
 # Professional Summary
 
-Write a strong professional summary.
-
----
+Write a concise professional summary.
 
 # Technical Skills
 
-Organize skills into categories:
-
+Group skills into:
 - Programming Languages
 - Frontend
 - Backend
 - Database
-- Cloud
 - Tools
-- Version Control
-- Other Technologies
-
----
-
-# Professional Experience
-
-Rewrite every experience professionally.
-
-Each experience should contain:
-
-• Job Title
-
-• Company
-
-• Duration
-
-• Responsibilities
-
-• Achievements (Only if available)
-
----
+- Other Skills
 
 # Projects
 
-Rewrite every project professionally.
-
-For every project include:
-
-Project Name
-
-Technologies Used
-
-Description
-
-Key Features
-
-Outcome
-
----
+For each project include:
+- Project Name
+- Technologies
+- Description
+- Key Features
 
 # Education
 
 Rewrite professionally.
 
----
-
 # Certifications
 
-Rewrite professionally.
-
----
+Include only if present.
 
 # Additional Information
 
 Include:
+- Soft Skills
+- Languages
+- GitHub
+- LinkedIn
+- Portfolio (if available)
 
-Languages
-
-Soft Skills
-
-Relevant Information
-
-(Only if available)
-
----
-
-Formatting Rules
-
-• Use Markdown.
-
-• Use bullet points.
-
-• Use professional language.
-
-• Keep proper spacing.
-
-• Make it ATS friendly.
-
------------------------------------------------------
-
-Candidate Resume
+Resume:
 
 {resume_text}
-
 """
-    return prompt

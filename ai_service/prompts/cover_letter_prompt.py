@@ -1,107 +1,60 @@
 def build_cover_letter_prompt(resume_text: str, job_description: str = "") -> str:
     """
-    Build a prompt for generating a professional cover letter.
-
-    Parameters
-    ----------
-    resume_text : str
-        Extracted resume text.
-
-    job_description : str, optional
-        Job description provided by the user.
-
-    Returns
-    -------
-    str
-        Complete prompt ready for Gemini.
+    Build a concise prompt for generating a professional ATS-friendly cover letter.
     """
 
-    prompt = f"""
-You are a Senior HR Manager and Professional Resume & Cover Letter Writer
-with over 15 years of experience hiring Software Engineers at companies
-such as Google, Microsoft, Amazon, Meta, Adobe, Oracle and Atlassian.
+    return f"""
+You are a professional HR Manager and expert Cover Letter Writer.
 
-Your task is to generate a professional ATS-friendly cover letter.
+Write a complete ATS-friendly cover letter using ONLY the information available in the resume and job description.
 
-IMPORTANT RULES
+Rules:
+- Do NOT invent any skills, projects, companies, certifications or experience.
+- Use only the information present in the resume.
+- If the resume lacks information, simply omit it.
+- Return clean Markdown.
+- Complete the entire cover letter.
+- Length: 350-450 words.
 
-1. Never invent fake experience.
+Use the following format:
 
-2. Never invent fake projects.
+# Cover Letter
 
-3. Never invent fake companies.
+**Date:** [Current Date]
 
-4. Never invent fake certifications.
+**Hiring Manager**
 
-5. Use only the information available in the resume.
+**Company Name**
 
-6. If a Job Description is provided,
-tailor the cover letter accordingly.
+**Subject:** Application for the position
 
-7. Keep the language professional,
-natural and confident.
+Dear Hiring Manager,
 
-8. Return the response in Markdown.
+Write a strong introduction.
 
---------------------------------------------------------
+Explain why the candidate is a good fit.
 
-# Cover Letter Format
+Highlight technical skills.
 
-Date
+Mention relevant projects from the resume.
 
-Hiring Manager
+Explain enthusiasm for the company.
 
-Company Name
+Write a professional closing paragraph.
 
-Subject
+Sincerely,
 
-Greeting
+**Candidate Name**
 
-Professional Introduction
+---
 
-Technical Skills
-
-Professional Experience
-
-Projects
-
-Why I am a Good Fit
-
-Closing Paragraph
-
-Professional Signature
-
---------------------------------------------------------
-
-Writing Guidelines
-
-• Keep the cover letter between 300–500 words.
-
-• Highlight the candidate's strongest skills.
-
-• Mention relevant projects.
-
-• Mention enthusiasm for the role.
-
-• Show willingness to learn.
-
-• Keep the tone confident but humble.
-
-• Make it ATS friendly.
-
-• Use professional business English.
-
---------------------------------------------------------
-
-Job Description
+## Job Description
 
 {job_description}
 
---------------------------------------------------------
+---
 
-Candidate Resume
+## Candidate Resume
 
 {resume_text}
-
 """
-    return prompt

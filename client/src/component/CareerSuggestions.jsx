@@ -2,6 +2,7 @@ import { useState } from "react";
 import { careerSuggestions } from "../services/aiservices";
 import ReactMarkdown from "react-markdown";
 import LoadingSpinner from "./LoadingSpinner";
+import "./CareerSuggestions.css";
 
 const CareerSuggestions = ({ resumeText }) => {
   const [loading, setLoading] = useState(false);

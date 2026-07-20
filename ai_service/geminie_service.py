@@ -63,15 +63,10 @@ model = genai.GenerativeModel(
 # ---------------------------------------------------
 
 GENERATION_CONFIG = {
-
-    "temperature": 0.3,
-
-    "top_p": 0.9,
-
-    "top_k": 40,
-
-    "max_output_tokens": 2048,
-
+    "temperature": 0.4,
+    "top_p": 0.95,
+    "top_k": 32,
+    "max_output_tokens": 4096,
 }
 
 
@@ -80,66 +75,32 @@ GENERATION_CONFIG = {
 # ---------------------------------------------------
 
 def _generate_response(prompt: str) -> str:
-    """
-    Sends a prompt to Gemini and returns
-    generated text.
-
-    Parameters
-    ----------
-    prompt : str
-
-    Returns
-    -------
-    str
-    """
-
     try:
 
         response = model.generate_content(
-
             prompt,
-
             generation_config=GENERATION_CONFIG
-
         )
 
         if not response:
-
-            raise Exception(
-                "Empty response received from Gemini."
-            )
+            raise Exception("Empty response received from Gemini.")
 
         if not response.text:
+            raise Exception("Gemini returned no text.")
 
-            raise Exception(
-                "Gemini returned no text."
-            )
+        text = response.text.strip()
 
-        return response.text.strip()
+        logger.info("=" * 60)
+        logger.info(f"Generated Characters: {len(text)}")
+        logger.info("=" * 60)
+        logger.info(text)
+        logger.info("=" * 60)
+
+        return text
 
     except Exception as e:
-
         logger.exception(e)
-
         return f"Error: {str(e)}"
-
-
-# ---------------------------------------------------
-# Resume Review
-# ---------------------------------------------------
-
-def review_resume(resume_text: str) -> str:
-    """
-    Generate professional recruiter review.
-    """
-
-    prompt = build_review_prompt(
-        resume_text
-    )
-
-    return _generate_response(
-        prompt
-    )
 
 
 # ---------------------------------------------------
