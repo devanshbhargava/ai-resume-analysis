@@ -40,15 +40,23 @@ const uploadResume = async (req, res) => {
         return res.status(200).json(flaskResponse.data);
 
     } catch (error) {
+        console.error("========= ERROR =========");
+        console.error(error.message);
 
-        console.error(error);
+        if (error.response) {
+            console.error("Status:", error.response.status);
+            console.error("Data:", error.response.data);
+        }
+
+        if (error.stack) {
+            console.error(error.stack);
+        }
 
         return res.status(500).json({
             success: false,
             message: "Resume analysis failed",
             error: error.message
         });
-
     }
 };
 
