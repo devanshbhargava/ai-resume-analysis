@@ -101,6 +101,20 @@ def _generate_response(prompt: str) -> str:
     except Exception as e:
         logger.exception(e)
         return f"Error: {str(e)}"
+    
+
+def review_resume(resume_text: str) -> str:
+    """
+    Review resume professionally using Gemini.
+    """
+
+    prompt = build_review_prompt(
+        resume_text
+    )
+
+    return _generate_response(
+        prompt
+    )
 
 
 # ---------------------------------------------------
